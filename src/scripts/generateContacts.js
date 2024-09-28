@@ -11,7 +11,7 @@ const generateContacts = async (number) => {
     const existingData = await readContacts();
     const parsedData = JSON.parse(existingData) || [];
     const updateData = [...parsedData, ...newContacts];
-    await writeContacts(JSON.stringify(updateData));
+    await writeContacts(JSON.stringify(updateData, undefined, 2));
   } catch (e) {
     console.error(e);
   }
